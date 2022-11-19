@@ -16,6 +16,11 @@ import { RouterLink, RouterView } from "vue-router";
             >Add Contact</RouterLink
           >
         </li>
+        <li class="nav-item">
+          <RouterLink to="/view-contact" class="nav-link"
+            >View Contact</RouterLink
+          >
+        </li>
       </ul>
     </nav>
   </header>
