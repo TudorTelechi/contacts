@@ -1,33 +1,13 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
+import NavBar from "./components/NavBar.vue";
 </script>
 
 <template>
-  <header>
-    <nav class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand" href="/">Contacts</a>
+  <NavBar> </NavBar>
+  <h2></h2>
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <RouterLink to="/" class="nav-link">Home</RouterLink>
-        </li>
-        <li class="nav-item">
-          <RouterLink to="/add-contact" class="nav-link"
-            >Add Contact</RouterLink
-          >
-        </li>
-        <li class="nav-item">
-          <RouterLink to="/view-contact" class="nav-link"
-            >View Contact</RouterLink
-          >
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="container-fluid">
-    <RouterView />
-  </div>
+  <RouterView />
 </template>
 
 <style scoped></style>

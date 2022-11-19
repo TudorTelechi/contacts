@@ -1,5 +1,5 @@
 <template>
-  <h2>Add Contact Tes</h2>
+  <h2>Add aici</h2>
 </template>
 <script>
 export default {

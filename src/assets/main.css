@@ -1,19 +1,10 @@
 @import "./base.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
-#app {
-  margin: 0 auto;
-  font-weight: normal;
-}
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap-vue/dist/bootstrap-vue.css";
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f0fdf0;
 }

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import ContactManager from "../views/ContactManager.vue";
 import AddContact from "../views/AddContact.vue";
 import ViewContact from "../views/ViewContact.vue";
+import EditContact from "@/views/EditContact.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,22 +19,24 @@ const router = createRouter({
       component: ContactManager,
     },
     {
-      path: "/add-contact",
+      path: "/contacts/add",
       name: "AddContact",
       component: AddContact,
     },
     {
-      path: "/view-contact",
+      path: "/contacts/view/:contactID",
       name: "ViewContact",
       component: ViewContact,
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: "/contacts/edit/:contactID",
+      name: "EditContact",
+      component: EditContact,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "PageNotFound",
+      component: PageNotFound,
     },
   ],
 });
