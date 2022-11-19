@@ -8,3 +8,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   background-color: #f0fdf0;
 }
+.contact-img {
+  width: 150px;
+  border-radius: 50%;
+}
