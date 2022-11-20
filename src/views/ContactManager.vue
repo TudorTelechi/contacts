@@ -37,7 +37,7 @@
   </div>
   <div class="container mt-3">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6" v-for="contact in contacts" :key="contact.id">
         <div class="card my-2 list-group-item-success shadow-lg">
           <div class="card-body">
             <div class="row align-items-center">
@@ -50,13 +50,13 @@
               <div class="col-sm-7">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    Name: <span class="fw-bold">Name</span>
+                    Name: <span class="fw-bold">{{ contact.name }}</span>
                   </li>
                   <li class="list-group-item">
-                    Email: <span class="fw-bold">Email</span>
+                    Email: <span class="fw-bold">{{ contact.email }}</span>
                   </li>
                   <li class="list-group-item">
-                    Mobile: <span class="fw-bold">Mobile</span>
+                    Mobile: <span class="fw-bold">{{ contact.mobile }}</span>
                   </li>
                 </ul>
               </div>
@@ -85,10 +85,9 @@
 </template>
 <script>
 import { ContactService } from "@/services/ContactService";
-import { TriggerOpTypes } from "vue";
 
 export default {
-  name: "ContactManager" /*,
+  name: "ContactManager",
   data: function () {
     return {
       loading: false,
@@ -99,7 +98,7 @@ export default {
   created: async function () {
     try {
       this.loading = true;
-      let response = await ContactService.getAllContacts();
+      const response = await ContactService.getAllContacts();
       this.contacts = response.data;
       this.loading = false;
     } catch (error) {
@@ -108,7 +107,6 @@ export default {
     }
   },
   methods: {},
-  */,
 };
 </script>
 
