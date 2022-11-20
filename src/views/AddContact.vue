@@ -45,6 +45,12 @@
           </div>
         </form>
       </div>
+      <div class="col-md-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtF3o2PvqxOMHgdrpj_YRItsLBjxyTeNZu_Q&usqp=CAU"
+          alt=""
+          class="contact-img" />
+      </div>
     </div>
   </div>
 </template>
