@@ -84,8 +84,31 @@
   </div>
 </template>
 <script>
+import { ContactService } from "@/services/ContactService";
+import { TriggerOpTypes } from "vue";
+
 export default {
-  name: "ContactManager",
+  name: "ContactManager" /*,
+  data: function () {
+    return {
+      loading: false,
+      contacts: [],
+      errorMessage: null,
+    };
+  },
+  created: async function () {
+    try {
+      this.loading = true;
+      let response = await ContactService.getAllContacts();
+      this.contacts = response.data;
+      this.loading = false;
+    } catch (error) {
+      this.errorMessage = error;
+      this.loading = false;
+    }
+  },
+  methods: {},
+  */,
 };
 </script>
 
