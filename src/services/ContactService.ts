@@ -11,8 +11,8 @@ export class ContactService {
     const dataURL = `${this.serverURL}/contacts`;
     return axios.get(dataURL);
   }
-  static getContact(contactId: Contact) {
-    const dataURL = `${this.serverURL}/contacts/${contactId}`;
+  static getContact(contactID: Contact) {
+    const dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.get(dataURL);
   }
 
@@ -21,13 +21,13 @@ export class ContactService {
     return axios.post(dataURL, contact);
   }
 
-  static updateContact(contact: Contact, contactId: Contact) {
-    const dataURL = `${this.serverURL}/contacts/${contactId}`;
+  static updateContact(contact: Contact, contactID: Contact) {
+    const dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.put(dataURL, contact);
   }
 
-  static deleteContact(contactId: Contact) {
-    const dataURL = `${this.serverURL}/coontact/${contactId}`;
+  static deleteContact(contactID: Contact) {
+    const dataURL = `${this.serverURL}/contacts/${contactID}`;
     return axios.delete(dataURL);
   }
 

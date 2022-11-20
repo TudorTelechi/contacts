@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ContactManager from "../views/ContactManager.vue";
 import AddContact from "../views/AddContact.vue";
-import ViewContact from "../views/ViewContact.vue";
+import ViewContact from "@/views/ViewContact.vue";
 import EditContact from "@/views/EditContact.vue";
 import PageNotFound from "@/views/PageNotFound.vue";
 

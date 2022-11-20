@@ -81,16 +81,18 @@
               <div
                 class="col-sm-1 d-flex flex-column justify-content-center align-items-center">
                 <RouterLink
-                  to="/contacts/view/:contactId"
+                  :to="`/contacts/view/${contact.id}`"
                   class="btn btn-warning my-1">
                   <i class="fa fa-eye"></i>
                 </RouterLink>
                 <RouterLink
-                  to="/contacts/edit/:contactId"
+                  :to="`/contacts/edit/${contact.id}`"
                   class="btn btn-primary my-1">
                   <i class="fa fa-pen"></i>
                 </RouterLink>
-                <button class="btn btn-danger my-1">
+                <button
+                  class="btn btn-danger my-1"
+                  @click="clickDeleteContact(contact.id)">
                   <i class="fa fa-trash"> </i>
                 </button>
               </div>
@@ -125,7 +127,23 @@ export default {
       this.loading = false;
     }
   },
-  methods: {},
+  methods: {
+    clickDeleteContact: async function (contactID) {
+      try {
+        this.loading = true;
+        let response = await ContactService.deleteContact(contactID);
+        if (response) {
+          this.loading = true;
+          let response = await ContactService.getAllContacts();
+          this.contacts = response.data;
+          this.loading = false;
+        }
+      } catch (error) {
+        this.errorMessage = error;
+        this.loading = false;
+      }
+    },
+  },
   components: { Spinner },
 };
 </script>
