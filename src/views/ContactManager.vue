@@ -35,6 +35,27 @@
       </div>
     </div>
   </div>
+  <!--Spinner -->
+  <div v-if="loading">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <Spinner />
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Error Messager -->
+  <div v-if="!loading && errorMessage">
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col">
+          <p class="h4 text-danger fw-bold">{{ errorMessage }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container mt-3">
     <div class="row">
       <div class="col-md-6" v-for="contact in contacts" :key="contact.id">
@@ -42,10 +63,7 @@
           <div class="card-body">
             <div class="row align-items-center">
               <div class="col-sm-4">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtF3o2PvqxOMHgdrpj_YRItsLBjxyTeNZu_Q&usqp=CAU"
-                  alt=""
-                  class="contact-img" />
+                <img :src="contact.photo" alt="" class="contact-img" />
               </div>
               <div class="col-sm-7">
                 <ul class="list-group">
@@ -84,6 +102,7 @@
   </div>
 </template>
 <script>
+import Spinner from "@/components/Spinner.vue";
 import { ContactService } from "@/services/ContactService";
 
 export default {
@@ -107,6 +126,7 @@ export default {
     }
   },
   methods: {},
+  components: { Spinner },
 };
 </script>
 
